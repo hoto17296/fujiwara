@@ -9,4 +9,16 @@ describe('fujiwara', () => {
     assert.equal(fujiwara(text), expect);
   });
 
+  it('should ignore spaces', () => {
+    var text = 'ああああ ああああ！！！';
+    var expect = 'あ゛あ゛あ゛あ゛ あ゛あ゛あ゛あ゛！゛！゛！゛';
+    assert.equal(fujiwara(text), expect);
+  });
+
+  it('should ignore full-width spaces', () => {
+    var text = 'ああああ　ああああ！！！';
+    var expect = 'あ゛あ゛あ゛あ゛　あ゛あ゛あ゛あ゛！゛！゛！゛';
+    assert.equal(fujiwara(text), expect);
+  });
+
 });
