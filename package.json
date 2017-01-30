@@ -1,0 +1,15 @@
+{
+  "name": "fujiwara",
+  "version": "0.1.0",
+  "description": "あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛！゛！゛！゛",
+  "author": "hoto17296",
+  "license": "MIT",
+  "repository": "hoto17296/fujiwara",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}
