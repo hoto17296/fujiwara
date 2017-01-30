@@ -3,7 +3,7 @@ module.exports = function(text, opts) {
     separator: '゛',
   }, opts);
   if ( typeof text.split !== 'function' ) throw new TypeError();
-  return text.split().map((char) => {
+  return text.split('').map((char) => {
     return char + opts.separator;
-  }).join();
+  }).join('');
 }
