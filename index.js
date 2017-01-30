@@ -9,6 +9,7 @@ module.exports = function(text, opts) {
     opts.ignoreChars = opts.ignoreChars.concat([' ', '　']);
   }
   return text.split('').map((char) => {
+    if ( char.charCodeAt() < 0x20 ) return char;
     if ( opts.ignoreChars.indexOf(char) !== -1 ) return char;
     return char + opts.separator;
   }).join('');

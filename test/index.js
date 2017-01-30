@@ -21,4 +21,10 @@ describe('fujiwara', () => {
     assert.equal(fujiwara(text), expect);
   });
 
+  it('should ignore control characters', () => {
+    var text = "ああああ\nああああ！！！";
+    var expect = "あ゛あ゛あ゛あ゛\nあ゛あ゛あ゛あ゛！゛！゛！゛";
+    assert.equal(fujiwara(text), expect);
+  });
+
 });
