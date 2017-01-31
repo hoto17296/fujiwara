@@ -35,6 +35,8 @@ describe('fujiwara', () => {
       null,
       1235,
       () => {},
+      {},
+      /test/,
     ];
 
     invalidCases.forEach(param => {
