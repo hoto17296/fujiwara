@@ -6,6 +6,9 @@
   "license": "MIT",
   "repository": "hoto17296/fujiwara",
   "main": "index.js",
+  "engines": {
+    "node": ">= 4"
+  },
   "scripts": {
     "test": "mocha"
   },
