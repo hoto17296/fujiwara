@@ -1,5 +1,6 @@
 var fujiwara = require('..');
 var assert = require('assert');
+var FujiwaraError = require('../fujiwara-error');
 
 describe('fujiwara', () => {
 
@@ -25,6 +26,18 @@ describe('fujiwara', () => {
     var text = "ああああ\nああああ！！！";
     var expect = "あ゛あ゛あ゛あ゛\nあ゛あ゛あ゛あ゛！゛！゛！゛";
     assert.equal(fujiwara(text), expect);
+  });
+
+  it('should despair with invalid parameter', () => {
+    const invalidCases = [
+      null,
+      1235,
+      () => {},
+    ];
+
+    invalidCases.forEach(param => {
+      assert.throws(fujiwara.bind(this, param), FujiwaraError);
+    });
   });
 
 });
