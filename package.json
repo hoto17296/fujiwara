@@ -11,5 +11,8 @@
   },
   "devDependencies": {
     "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "lodash.isstring": "^4.0.1"
   }
 }
