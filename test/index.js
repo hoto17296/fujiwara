@@ -1,32 +1,32 @@
 "use strict";
 
-var fujiwara = require('..');
-var assert = require('assert');
-var FujiwaraError = require('../fujiwara-error');
+const fujiwara = require('..');
+const assert = require('assert');
+const FujiwaraError = require('../fujiwara-error');
 
 describe('fujiwara', () => {
 
   it('should add ゛ for each character', () => {
-    var text = 'ああああああああ！！！';
-    var expect = 'あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛！゛！゛！゛';
+    const text = 'ああああああああ！！！';
+    const expect = 'あ゛あ゛あ゛あ゛あ゛あ゛あ゛あ゛！゛！゛！゛';
     assert.equal(fujiwara(text), expect);
   });
 
   it('should ignore spaces', () => {
-    var text = 'ああああ ああああ！！！';
-    var expect = 'あ゛あ゛あ゛あ゛ あ゛あ゛あ゛あ゛！゛！゛！゛';
+    const text = 'ああああ ああああ！！！';
+    const expect = 'あ゛あ゛あ゛あ゛ あ゛あ゛あ゛あ゛！゛！゛！゛';
     assert.equal(fujiwara(text), expect);
   });
 
   it('should ignore full-width spaces', () => {
-    var text = 'ああああ　ああああ！！！';
-    var expect = 'あ゛あ゛あ゛あ゛　あ゛あ゛あ゛あ゛！゛！゛！゛';
+    const text = 'ああああ　ああああ！！！';
+    const expect = 'あ゛あ゛あ゛あ゛　あ゛あ゛あ゛あ゛！゛！゛！゛';
     assert.equal(fujiwara(text), expect);
   });
 
   it('should ignore control characters', () => {
-    var text = "ああああ\nああああ！！！";
-    var expect = "あ゛あ゛あ゛あ゛\nあ゛あ゛あ゛あ゛！゛！゛！゛";
+    const text = "ああああ\nああああ！！！";
+    const expect = "あ゛あ゛あ゛あ゛\nあ゛あ゛あ゛あ゛！゛！゛！゛";
     assert.equal(fujiwara(text), expect);
   });
 
