@@ -1,3 +1,5 @@
+"use strict";
+
 var fujiwara = require('..');
 var assert = require('assert');
 var FujiwaraError = require('../fujiwara-error');
